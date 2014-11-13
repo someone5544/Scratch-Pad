@@ -95,3 +95,12 @@ public int compareTo(Diamond other)
   else
     return 0;
 }
+
+public String toString()
+{
+  return "Diamond "+this.getStockNumber+"\n"
+        +"Carot: "+this.getCarot()+"\n"
+        +"Clarity: "+this.getClarity()+"\n"
+        +"Color: "+this.getColor()+"\n"
+        +"Cut: "+this.getCut()+"\n";
+}
