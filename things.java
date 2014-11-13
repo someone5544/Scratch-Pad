@@ -65,6 +65,19 @@ public int getCombinedGrade()
     return this.getClarityInt();
 }
 
+public int getWorstGrade()
+{
+  // Clarity is worse, return it.
+  if(this.getClarityInt() > this.getColorInt())
+    return this.getClarityInt();
+  // Color is worse, return it.
+  else if(this.getClarityInt() < this.getColorInt())
+    return this.getColorInt();
+  // Both are equal, return either.
+  else
+    return this.getClarityInt();
+}
+
 public int compareTo(Diamond other)
 {
   if(other.getCarot() > this.getCarot())
@@ -74,6 +87,10 @@ public int compareTo(Diamond other)
   else if(other.getCombinedGrade() < this.getCombinedGrade())
     return 1;
   else if(other.getCombinedGrade() > this.getCombinedGrade())
+    return -1;
+  else if(other.getWorstGrade() < this.getWorstGrade())
+    return 1;
+  else if(other.getWorstGrade() > this.getWorstGrade())
     return -1;
   else
     return 0;
