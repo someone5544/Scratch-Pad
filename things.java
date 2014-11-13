@@ -52,10 +52,29 @@ public int getColorInt()
     return 11;
 }
 
-/*public int compareTo(Diamond other)
+public int getCombinedGrade()
+{
+  // Clarity is better, return it.
+  if(this.getClarityInt() < this.getColorInt())
+    return this.getClarityInt();
+  // Color is better, return it.
+  else if(this.getClarityInt() > this.getColorInt())
+    return this.getColorInt();
+  // Both are equal, return either.
+  else
+    return this.getClarityInt();
+}
+
+public int compareTo(Diamond other)
 {
   if(other.getCarot() > this.getCarot())
     return 1;
   else if(other.getCarot() < this.getCarot())
     return -1;
-}*/
+  else if(other.getCombinedGrade() < this.getCombinedGrade())
+    return 1;
+  else if(other.getCombinedGrade() > this.getCombinedGrade())
+    return -1;
+  else
+    return 0;
+}
