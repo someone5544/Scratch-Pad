@@ -2,6 +2,9 @@
 Thumbs.db
 ehthumbs.db
 
+# Compiled Java
+*.class
+
 # Folder config file
 Desktop.ini
 
